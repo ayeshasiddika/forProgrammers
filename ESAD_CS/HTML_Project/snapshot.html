@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>SnapShot</title>
+    <script src="Scripts/jquery-3.2.1.js"></script>
+</head>
+<body>
+    <div style="float:right;margin-left:600px;margin-right:50px;margin-top:30px;">
+        <a href="index.html"><input type="button" value="← Back to Home" style="background-color:green;color:white;font-size:20px;width:200px;height:30px;" /></a>
+    </div>
+    <video id="myVideo" width="550" height="350" controls="controls" autoplay="autoplay">
+        <source src="videos/abc.mp4" type="video/mp4" />
+    </video>
+    <br />
+    <button id="btnSnapShot">SnapShot</button>
+    <br />
+    <br />
+    <canvas id="myCanvas" width="360" height="240"></canvas>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btnSnapShot").on("click", drawViewFrame)
+        });
+        function drawViewFrame() {
+            var canvas = document.getElementById("myCanvas");
+            var video = document.getElementById("myVideo");
+            canvas.getContext("2d").drawImage(video, 0, 0, 360, 240);
+        }
+
+    </script>
+</body>
+</html>
+
+

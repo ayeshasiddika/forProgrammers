@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <script src="Scripts/jquery-3.2.1.min.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQc5R6_vQcGdyQ8g_Hk9R6LrKFtsHZxTE&callback=initMap"
+            type="text/javascript"></script>
+</head>
+<body>
+    <div style="float:left;margin-top:30px;">
+        <a href="index.html"><input type="button" value="← Back to Home" style="background-color:green;color:white;font-size:20px;width:200px;height:30px;" /></a>
+    </div>
+    <center>
+        <div id="d1" style="width:600px; height:600px;">
+
+        </div>
+    </center>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            navigator.geolocation.getCurrentPosition(getPosition, showError);
+
+            function getPosition(position) {
+                //var coords = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                var coords = new google.maps.LatLng(23.762614, 90.366355);
+
+                var div = document.getElementById("d1");
+                var option = {
+                    zoom: 15,
+                    center: coords,
+                    mapTypeControl: false,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    navigationControlOption: {
+                        style: google.maps.NavigationControlStyle.SMALL
+                    }
+                };
+                var map = new google.maps.Map(div, option);
+                var marker = new google.maps.Marker({
+                    position: coords,
+                    map: map,
+                    title: "BAZL"
+                });
+            }
+            function showError(error) {
+                alert(error.message);
+            }
+        })
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Calculator</title>
+   
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        form {
+            border: groove;
+            margin-left: 500px;
+            margin-top: 20px;
+            border-radius: 25px;
+            width: 300px;
+            background: darkgray;
+        }
+
+        h1 {
+            margin-top: 5px;
+            text-align: center;
+            color: white;
+        }
+
+        .txtbox {
+            width: 250px;
+            height: 45px;
+            text-align: right;
+            color: black;
+            margin-top: 5px;
+            margin-left: 20px;
+            margin-bottom: 10px;
+            font-size: 30px;
+        }
+
+        .btn {
+            padding: 5px;
+            margin-left: 20px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            width: 45px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 15px;
+            background-color: #cff7f5;
+        }
+
+            .btn:hover {
+                color: red;
+            }
+    </style>
+</head>
+<body>
+    <div style="float:left;margin-top:30px;">
+        <a href="index.html"><input type="button" value="← Back to Home" style="background-color:green;color:white;font-size:20px;width:200px;height:30px;" /></a>
+    </div>
+    <form name="frm">
+        <h1>Simple Calculator</h1>
+        <input class="txtbox" type="text" name="txtResult" /><br />
+        <input class="btn" type="button" name="7" value="7" onclick="Run7()" />
+        <input class="btn" type="button" name="8" value="8" onclick="Run8()" />
+        <input class="btn" type="button" name="9" value="9" onclick="Run9()" />
+        <input class="btn" type="button" name="clear" value="C" onclick="Runclear()" /><br />
+        <input class="btn" type="button" name="4" value="4" onclick="Run4()" />
+        <input class="btn" type="button" name="5" value="5" onclick="Run5()" />
+        <input class="btn" type="button" name="6" value="6" onclick="Run6()" />
+        <input class="btn" type="button" name="division" value="/" onclick="Rundivision()" /><br />
+        <input class="btn" type="button" name="1" value="1" onclick="Run1()" />
+        <input class="btn" type="button" name="2" value="2" onclick="Run2()" />
+        <input class="btn" type="button" name="3" value="3" onclick="Run3()" />
+        <input class="btn" type="button" name="multiplication" value="*" onclick="Runmultiply()" /><br />
+        <input class="btn" type="button" name="0" value="0" onclick="Run0()" />
+        <input class="btn" type="button" name="plus" value="+" onclick="Runplus()" />
+        <input class="btn" type="button" name="minus" value="-" onclick="Runminus()" />
+        <input class="btn" type="button" name="equal" value="=" onclick="eValue()" />
+    </form>
+    <script type="text/javascript">
+
+
+        function Run1() { document.frm.txtResult.value += 1; }
+        function Run2() { document.frm.txtResult.value += 2; }
+        function Run3() { document.frm.txtResult.value += 3; }
+        function Run4() { document.frm.txtResult.value += 4; }
+        function Run5() { document.frm.txtResult.value += 5; }
+        function Run6() { document.frm.txtResult.value += 6; }
+        function Run7() { document.frm.txtResult.value += 7; }
+        function Run8() { document.frm.txtResult.value += 8; }
+        function Run9() { document.frm.txtResult.value += 9; }
+        function Run0() { document.frm.txtResult.value += 0; }
+        function Runplus() { document.frm.txtResult.value += "+"; }
+        function Runminus() { document.frm.txtResult.value += "-"; }
+        function Runmultiply() { document.frm.txtResult.value += "*"; }
+        function Rundivision() { document.frm.txtResult.value += "/"; }
+        function Runclear() { document.frm.txtResult.value = ""; }
+
+        function eValue() {
+            var equalValue = eval(document.frm.txtResult.value);
+            document.frm.txtResult.value = equalValue;
+        }
+
+
+    </script>
+</body>
+</html>
